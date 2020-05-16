@@ -41,13 +41,15 @@ add_executable(psf2wav
         highly_experimental/Highly_Experimental/Core/vfs.c
         highly_experimental/Highly_Experimental/Core/mkhebios.c
         hebios.bin
+		  blob.xz
 )
 
 target_link_libraries(psf2wav z)
 
 add_custom_command(
   OUTPUT hebios.bin
-  COMMAND unxz blob.xz && mv blob hebios.bin
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+  COMMAND unxz -k blob.xz && mv blob ${CMAKE_BINARY_DIR}/hebios.bin
 )
 
 
