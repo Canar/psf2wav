@@ -23,6 +23,10 @@
 static int cnts = 4;
 static u32 last=0;
 
+psxCounter psxCounters[5];
+u32 psxNextCounter=0;
+u32 psxNextsCounter=0;
+
 static void psxRcntUpd(u32 index) {
 	psxCounters[index].sCycle = psxRegs.cycle;
 	if (((!(psxCounters[index].mode & 1)) || (index!=2)) &&

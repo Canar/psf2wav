@@ -21,6 +21,12 @@
 
 #include "PsxCommon.h"
 
+s8 *psxM=0;
+s8 *psxP=0;
+s8 *psxR=0;
+s8 *psxH=0;
+char **psxMemLUT=0;
+
 void LoadPSXMem(u32 address, s32 length, char *data)
 {
  //printf("%08x %08x\n",address,length);

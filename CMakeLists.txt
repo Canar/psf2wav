@@ -47,13 +47,7 @@ target_link_libraries(psf2wav z)
 
 add_custom_command(
   OUTPUT hebios.bin
-  DEPENDS foo_psf.fb2k-component
-  COMMAND unzip foo_psf.fb2k-component hebios.bin && touch hebios.bin
-)
-
-add_custom_command(
-  OUTPUT foo_psf.fb2k-component
-  COMMAND wget http://kode54.foobar2000.org/foo_psf.fb2k-component
+  COMMAND unxz blob.xz && mv blob hebios.bin
 )
 
 
